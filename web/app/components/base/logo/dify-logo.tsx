@@ -1,6 +1,7 @@
 'use client'
 import type { FC } from 'react'
 import useTheme from '@/hooks/use-theme'
+import { BRAND_LOGO_URL, BRAND_NAME } from '@/config'
 import { cn } from '@/utils/classnames'
 import { basePath } from '@/utils/var'
 
@@ -32,12 +33,13 @@ const DifyLogo: FC<DifyLogoProps> = ({
 }) => {
   const { theme } = useTheme()
   const themedStyle = (theme === 'dark' && style === 'default') ? 'monochromeWhite' : style
+  const brandLogoPath = BRAND_LOGO_URL.startsWith('http') ? BRAND_LOGO_URL : `${basePath}${BRAND_LOGO_URL}`
 
   return (
     <img
-      src={`${basePath}${logoPathMap[themedStyle]}`}
+      src={brandLogoPath || `${basePath}${logoPathMap[themedStyle]}`}
       className={cn('block object-contain', logoSizeMap[size], className)}
-      alt="Dify logo"
+      alt={`${BRAND_NAME} logo`}
     />
   )
 }

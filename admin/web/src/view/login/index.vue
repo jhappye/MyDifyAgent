@@ -23,7 +23,7 @@
                 {{ $GIN_VUE_ADMIN.appName }}
               </p>
               <p class="text-center text-sm font-normal text-gray-500 mt-2.5">
-                A management platform for Dify-Plus
+                企业级 AI 管理中心
               </p>
               <p v-if="redirectUri" class="text-center text-xs text-blue-600 mt-2">
                 登录后将跳回第三方应用
@@ -48,7 +48,7 @@
                     <el-input
                       v-model="loginFormData.username"
                       size="large"
-                      placeholder="请输入dify的第一个帐号,即为管理员帐号"
+                      placeholder="请输入平台第一个账号（将成为管理员）"
                       suffix-icon="user"
                     />
                   </el-form-item>

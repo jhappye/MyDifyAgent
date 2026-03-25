@@ -61,7 +61,7 @@ def get_setup_status_api() -> SetupStatusResponse:
 )
 @only_edition_self_hosted
 def setup_system(payload: SetupRequestPayload) -> SetupResponse:
-    """Initialize system setup with admin account."""
+    """Initialize 垣码平台 setup with admin account."""
     if get_setup_status():
         raise AlreadySetupError()
 

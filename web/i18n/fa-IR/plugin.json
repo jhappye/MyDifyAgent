@@ -137,7 +137,7 @@
   "detailPanel.toolSelector.unsupportedContent2": "برای تغییر نسخه کلیک کنید.",
   "detailPanel.toolSelector.unsupportedMCPTool": "نسخه فعلی پلاگین استراتژی عامل انتخاب‌شده از ابزارهای MCP پشتیبانی نمی‌کند.",
   "detailPanel.toolSelector.unsupportedTitle": "اکشن پشتیبانی نشده",
-  "difyVersionNotCompatible": "نسخه فعلی دیفی با این پلاگین سازگار نیست، لطفاً به نسخه حداقل مورد نیاز به‌روزرسانی کنید: {{minimalDifyVersion}}",
+  "difyVersionNotCompatible": "نسخه فعلی دیفی با این پلاگین سازگار نیست، لطفاً به نسخه حداقل مورد نیاز به‌روزرسانی کنید: {{minimal垣码平台Version}}",
   "endpointsEnabled": "{{num}} مجموعه نقاط پایانی فعال شده است",
   "error.fetchReleasesError": "امکان بازیابی نسخه ها وجود ندارد. لطفا بعدا دوباره امتحان کنید.",
   "error.inValidGitHubUrl": "URL GitHub نامعتبر است. لطفا یک URL معتبر را در قالب وارد کنید: https://github.com/owner/repo",

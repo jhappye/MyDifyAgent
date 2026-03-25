@@ -54,6 +54,13 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
   reactStrictMode: true,
+  env: {
+    NEXT_PUBLIC_BRAND_NAME: process.env.BRAND_NAME || '垣码平台',
+    NEXT_PUBLIC_BRAND_LOGO_URL: process.env.BRAND_LOGO_URL || '/logo/logo.svg',
+    NEXT_PUBLIC_BRAND_PRIMARY_COLOR: process.env.BRAND_PRIMARY_COLOR || '#1890ff',
+    NEXT_PUBLIC_BRAND_FAVICON_URL: process.env.BRAND_FAVICON_URL || '/favicon.ico',
+    NEXT_PUBLIC_COPYRIGHT_TEXT: process.env.COPYRIGHT_TEXT || 'Copyright © 2025 我方公司 版权所有',
+  },
   async redirects() {
     return [
       {

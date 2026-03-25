@@ -8,6 +8,7 @@ import GlobalPublicStoreProvider from '@/context/global-public-context'
 import { TanstackQueryInitializer } from '@/context/query-client'
 import { getLocaleOnServer } from '@/i18n-config/server'
 import { DatasetAttr } from '@/types/feature'
+import { BRAND_FAVICON_URL, BRAND_NAME, BRAND_PRIMARY_COLOR } from '@/config'
 import { cn } from '@/utils/classnames'
 import { ToastProvider } from './components/base/toast'
 import BrowserInitializer from './components/browser-initializer'
@@ -89,15 +90,15 @@ const LocaleLayout = async ({
     <html lang={locale ?? 'en'} className={cn('h-full', instrumentSerif.variable)} suppressHydrationWarning>
       <head>
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#1C64F2" />
+        <meta name="theme-color" content={BRAND_PRIMARY_COLOR} />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="Dify" />
+        <meta name="apple-mobile-web-app-title" content={BRAND_NAME} />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/icon-192x192.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/icon-192x192.png" />
-        <meta name="msapplication-TileColor" content="#1C64F2" />
+        <link rel="icon" type="image/png" sizes="32x32" href={BRAND_FAVICON_URL} />
+        <link rel="icon" type="image/png" sizes="16x16" href={BRAND_FAVICON_URL} />
+        <meta name="msapplication-TileColor" content={BRAND_PRIMARY_COLOR} />
         <meta name="msapplication-config" content="/browserconfig.xml" />
       </head>
       <body
