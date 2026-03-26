@@ -249,7 +249,7 @@ def _generate_account(provider: str, user_info: OAuthUserInfo) -> tuple[Account,
                 )
             else:
                 raise AccountRegisterError(description=("Invalid email or password"))
-        account_name = user_info.name or "Dify"
+        account_name = user_info.name or "垣码平台"
         account = RegisterService.register(
             email=normalized_email,
             name=account_name,

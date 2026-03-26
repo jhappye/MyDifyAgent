@@ -12,6 +12,10 @@ from dify_app import DifyApp
 logger = logging.getLogger(__name__)
 
 
+SENSITIVE_PLATFORM_HEADERS = {"X-Dify-Version", "X-Dify-Env"}
+
+
+
 # ----------------------------
 # Application Factory Function
 # ----------------------------
@@ -53,9 +57,21 @@ def create_flask_app_with_configs() -> DifyApp:
             logger.warning("Failed to add trace headers to response", exc_info=True)
         return response
 
+    @dify_app.after_request
+    def sanitize_platform_headers(response):
+        """Strip upstream product fingerprints from all API responses."""
+        for header in SENSITIVE_PLATFORM_HEADERS:
+            response.headers.pop(header, None)
+
+        if response.headers.get("Server", "").lower().startswith("dify"):
+            response.headers["Server"] = "Yuanma"
+
+        return response
+
     # Capture the decorator's return value to avoid pyright reportUnusedFunction
     _ = before_request
     _ = add_trace_headers
+    _ = sanitize_platform_headers
 
     return dify_app
 

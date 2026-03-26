@@ -2,6 +2,13 @@
 
 HTTPS_CONFIG=''
 
+# Backward-compatible defaults to prevent nginx startup crash when admin services
+# are not deployed in a given compose profile.
+export ADMIN_WEB_HOST="${ADMIN_WEB_HOST:-web}"
+export ADMIN_WEB_PORT="${ADMIN_WEB_PORT:-3000}"
+export ADMIN_API_HOST="${ADMIN_API_HOST:-api}"
+export ADMIN_API_PORT="${ADMIN_API_PORT:-5001}"
+
 if [ "${NGINX_HTTPS_ENABLED}" = "true" ]; then
     # Check if the certificate and key files for the specified domain exist
     if [ -n "${CERTBOT_DOMAIN}" ] && \

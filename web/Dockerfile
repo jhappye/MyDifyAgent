@@ -1,6 +1,9 @@
 # base image
 FROM node:24-alpine AS base
-LABEL maintainer="takatost@gmail.com"
+LABEL maintainer="your-company@example.com"
+LABEL vendor="Your Company"
+LABEL version="1.0.0"
+LABEL description="垣码智慧蜂AI平台"
 
 # if you located in China, you can use aliyun mirror to speed up
 # RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories

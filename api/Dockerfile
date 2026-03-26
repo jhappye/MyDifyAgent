@@ -28,6 +28,11 @@ RUN uv sync --locked --no-dev
 # production stage
 FROM base AS production
 
+LABEL maintainer="your-company@example.com"
+LABEL vendor="Your Company"
+LABEL version="1.0.0"
+LABEL description="垣码智慧蜂AI平台"
+
 ENV FLASK_APP=app.py
 ENV EDITION=SELF_HOSTED
 ENV DEPLOY_ENV=PRODUCTION

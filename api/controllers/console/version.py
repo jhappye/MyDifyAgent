@@ -33,7 +33,7 @@ class VersionResponse(BaseModel):
     tags=["console"],
 )
 def check_version_update(query: VersionQuery) -> VersionResponse:
-    """Check for application version updates."""
+    """Check for 垣码平台 version updates."""
     check_update_url = dify_config.CHECK_UPDATE_URL
 
     result = VersionResponse(

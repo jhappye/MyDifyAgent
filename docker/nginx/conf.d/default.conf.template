@@ -8,13 +8,13 @@ server {
       return 301 /admin/;
     }
     location /admin/ {
-      proxy_pass http://admin-web:8081/;
+      proxy_pass http://${ADMIN_WEB_HOST}:${ADMIN_WEB_PORT}/;
       add_header Cache-Control 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0';
       include proxy.conf;
     }
     location /admin/api/ {
       rewrite ^/admin/api/(.*)$ /$1 break;
-      proxy_pass http://admin-server:8888/admin/api/;
+      proxy_pass http://${ADMIN_API_HOST}:${ADMIN_API_PORT}/admin/api/;
       include proxy.conf;
     }
 

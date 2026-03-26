@@ -111,6 +111,13 @@ export const AMPLITUDE_API_KEY = getStringConfig(
 )
 
 export const IS_DEV = process.env.NODE_ENV === 'development'
+
+export const BRAND_NAME = process.env.NEXT_PUBLIC_BRAND_NAME || '垣码平台'
+export const BRAND_LOGO_URL = process.env.NEXT_PUBLIC_BRAND_LOGO_URL || '/logo/logo.svg'
+export const BRAND_FAVICON_URL = process.env.NEXT_PUBLIC_BRAND_FAVICON_URL || '/favicon.ico'
+export const BRAND_PRIMARY_COLOR = process.env.NEXT_PUBLIC_BRAND_PRIMARY_COLOR || '#1890ff'
+export const COPYRIGHT_TEXT = process.env.NEXT_PUBLIC_COPYRIGHT_TEXT || 'Copyright © 2025 我方公司 版权所有'
+
 export const IS_PROD = process.env.NODE_ENV === 'production'
 
 export const SUPPORT_MAIL_LOGIN = !!(

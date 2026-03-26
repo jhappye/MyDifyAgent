@@ -13,7 +13,10 @@ RUN go env -w GO111MODULE=on \
 
 FROM alpine:latest
 
-LABEL MAINTAINER="SliverHorn@sliver_horn@qq.com"
+LABEL maintainer="your-company@example.com"
+LABEL vendor="Your Company"
+LABEL version="1.0.0"
+LABEL description="垣码智慧蜂AI平台"
 # 设置时区
 ENV TZ=Asia/Shanghai
 RUN mkdir /app \

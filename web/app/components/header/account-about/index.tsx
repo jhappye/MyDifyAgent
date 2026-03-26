@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next'
 import Button from '@/app/components/base/button'
 import DifyLogo from '@/app/components/base/logo/dify-logo'
 import Modal from '@/app/components/base/modal'
-import { IS_CE_EDITION } from '@/config'
+import { BRAND_NAME, COPYRIGHT_TEXT, IS_CE_EDITION } from '@/config'
 
 import { useGlobalPublicStore } from '@/context/global-public-context'
 
@@ -54,7 +54,7 @@ export default function AccountAbout({
               ©
               {dayjs().year()}
               {' '}
-              LangGenius, Inc., Contributors.
+              {COPYRIGHT_TEXT}
             </div>
             <div className="text-text-accent">
               {
@@ -62,13 +62,14 @@ export default function AccountAbout({
                   ? <Link href="https://github.com/langgenius/dify/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">Open Source License</Link>
                   : (
                       <>
-                        <Link href="https://dify.ai/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</Link>
+                        <Link href="https://example.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</Link>
                         ,&nbsp;
-                        <Link href="https://dify.ai/terms" target="_blank" rel="noopener noreferrer">Terms of Service</Link>
+                        <Link href="https://example.com/terms" target="_blank" rel="noopener noreferrer">Terms of Service</Link>
                       </>
                     )
               }
             </div>
+            <div className="text-xs text-text-tertiary">本平台基于 Dify 开源项目二次开发，遵循 Apache-2.0。</div>
           </div>
         </div>
         <div className="-mx-8 mb-4 h-[0.5px] bg-divider-regular" />
@@ -83,7 +84,7 @@ export default function AccountAbout({
           <div className="flex items-center">
             <Button className="mr-2" size="small">
               <Link
-                href="https://github.com/langgenius/dify/releases"
+                href="https://example.com/changelog"
                 target="_blank"
                 rel="noopener noreferrer"
               >

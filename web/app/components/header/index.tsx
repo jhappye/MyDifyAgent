@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { useCallback } from 'react'
 import DifyLogo from '@/app/components/base/logo/dify-logo'
+import { BRAND_NAME } from '@/config'
 import WorkplaceSelector from '@/app/components/header/account-dropdown/workplace-selector'
 import { ACCOUNT_SETTING_TAB } from '@/app/components/header/account-setting/constants'
 import { useAppContext } from '@/context/app-context'
@@ -50,7 +51,7 @@ const Header = () => {
     <h1>
       {/* extend: 跳转修改 */}
       <Link href="/explore/apps-center-extend" className="flex h-8 shrink-0 items-center justify-center overflow-hidden whitespace-nowrap px-0.5 indent-[-9999px]">
-        {isBrandingEnabled && systemFeatures.branding.application_title ? systemFeatures.branding.application_title : 'Dify'}
+        {isBrandingEnabled && systemFeatures.branding.application_title ? systemFeatures.branding.application_title : BRAND_NAME}
         {systemFeatures.branding.enabled && systemFeatures.branding.workspace_logo
           ? (
               <img
